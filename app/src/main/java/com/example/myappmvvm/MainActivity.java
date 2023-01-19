@@ -105,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
         ContentResolver cr = getContentResolver();
         Cursor cursor = cr.query(ContractsContract.Contracts.CONTENT_URI, null, null, null, null);
 
+
+        // firstName объекта user присваивается значение полученного имени
         if (cursor.moveToFirst()){
             do {
                 @SuppressLint("Range") String name = cursor.getString(cursor.getColumnIndex(ContractsContract.Contract.DISPLAY_NAME));
