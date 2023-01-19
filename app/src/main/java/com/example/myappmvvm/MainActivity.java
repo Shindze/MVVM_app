@@ -120,4 +120,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void initRecyclerView(){
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        recyclerView.addItemDecoration(dividerItemDecoration);
+        userListAdapter = new UsersListAdapter(this);
+        recyclerView.setAdapter(userListAdapter);
+    }
+
 }
